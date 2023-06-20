@@ -9,11 +9,11 @@
     {id: 2, url: '/src/assets/kv_img2.jpg'}, 
     {id: 3, url: '/src/assets/kv_img3.jpg'}])
   const triangleImg = ref([
-    {id:1, url: '/src/assets/thumbs1.jpg'},
-    {id:2, url: '/src/assets/thumbs2.jpg'},
-    {id:3, url: '/src/assets/thumbs3.jpg'},
-    {id:4, url: '/src/assets/thumbs4.jpg'},
-    {id:5, url: '/src/assets/thumbs5.jpg'},
+    {id:1, url: '/src/assets/thumb1.jpg'},
+    {id:2, url: '/src/assets/thumb2.jpg'},
+    {id:3, url: '/src/assets/thumb3.jpg'},
+    {id:4, url: '/src/assets/thumb4.jpg'},
+    {id:5, url: '/src/assets/thumb5.jpg'},
   ])
   const img = function(url){
     return{
@@ -55,7 +55,7 @@
     <div class="welcome-block">
       <div class="kv">
         <ul class="kvList">
-          <li v-for="picture in pictures" :key="picture.id" :style="img(picture.url)"  :class="{animate: active === picture.id-1|| preactive === picture.id-1}"></li>
+          <li v-for="picture in pictures" :key="picture.id" :style="img(picture.url)"  :class="{animate: active === picture.id-1 || preactive === picture.id-1}"></li>
         </ul>
         <div class="text">
           <img src="/src/assets/kv_copy.png">
@@ -98,11 +98,7 @@
                 <img src="/src/assets/title.png">
               </div>
               <div class="triangles">
-                <img src="/src/assets/thumb1.jpg">
-                <img src="/src/assets/thumb2.jpg">
-                <img src="/src/assets/thumb3.jpg">
-                <img src="/src/assets/thumb4.jpg">
-                <img src="/src/assets/thumb5.jpg">
+                <img v-for="img in triangleImg" :key="img.id" :src="img.url">
                 <div class="more">
                   <div class="text">
                     <h2>MORE</h2>
@@ -118,7 +114,7 @@
   </div>
 </template>
 
-<style >
+<style>
   *{
     padding: 0;
     margin: 0;
@@ -167,7 +163,7 @@
     padding: 30px 20px 20px 25px;
     border-right: 4px solid black;
   }
-  .title-group .zelda-logo img{
+  .zelda-logo img{
     height: 80%;
     width: auto;
   }
@@ -180,21 +176,21 @@
     align-items: center;
     padding: 15px;
   }
-  .title-group .title .eng-title{
+  .title .eng-title{
     width: 100%;
     height: 40%;
     display: flex;
     justify-content: start;
     align-items: center;
   }
-  .title-group .title .eng-title h4{
+  .eng-title h4{
     font-size: 22px;
     font-weight: 550;
     letter-spacing: -0.5px;
     display: flex;
   }
-  .title-group .title .eng-title h4::before,
-  .title-group .title .eng-title h4::after{
+  .eng-title h4::before,
+  .eng-title h4::after{
     content: '';
     display: block;
     height: 4px;
@@ -202,22 +198,22 @@
     margin: auto;
     flex-grow: 1;
   }
-  .title-group .title .eng-title h4::before{
+  .eng-title h4::before{
     width: .4em;
     margin-right: 5px;
   }
-  .title-group .title .eng-title h4::after{
+  .eng-title h4::after{
     width: 25em;
     margin-left: 5px;
   }
-  .title-group .title .ch-title{
+  .title .ch-title{
     height: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
   }
-  .title-group .title .ch-title img{
+  .ch-title img{
     height: 65px;
     width: 100%;
   }
@@ -229,7 +225,7 @@
     padding: 15px;
     border-left: 4px solid black;
   }
-  .title-group .switch-logo img{
+  .switch-logo img{
     width: 100%;
     height: 100%;
   }
@@ -247,24 +243,24 @@
     border-bottom: 4px solid black;
     position: relative;
   }
-  .welcome-block .kv .text{
+  .kv .text{
     width: 50%;
     position: absolute;
     bottom: 30px;
     left: 30px;
   }
-  .welcome-block .kv .text img{
+  .kv .text img{
     width: 100%;
     height: 100%;
   }
-  .welcome-block .kv .kvList{
+  .kv .kvList{
     list-style: none;
     width: 100%;
     height: 100%;
     background-color: #9b9b9b;
     position: relative;
   }
-  .welcome-block .kv .kvList > li{
+  .kv .kvList > li{
     opacity: 0;
     position: absolute;
     width: 100%;
@@ -273,7 +269,7 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
-  .welcome-block .kv .kvList > li.animate{
+  .kv .kvList > li.animate{
     animation-name: kvAnimate;
     animation-timing-function:  linear;
     /* animation-iteration-count: infinite; */
@@ -308,7 +304,7 @@
     flex-direction: column;
     padding: 15px;
   }
-  .about .about-text .about-title{
+  .about-text .about-title{
     width: 125%;
     height: 30%;
     background: url("/src/assets/about_title_bg.png") no-repeat center / 100% 100%;
@@ -318,20 +314,20 @@
     position: relative;
     display: flex;
   }
-  .about .about-text .about-title h1{
+  .about-title h1{
     font-size: 40px;
     position: absolute;
     left: 30px;
   }
-  .about .about-text .about-title h1 span{
+  .about-title h1 span{
     font-size: 70px;
   }
-  .about .about-text .about-title h4{
+  .about-title h4{
     font-size: 20px;
     position: absolute;
     right: 50px;
   }
-  .about .about-text .about-p{
+  .about-text .about-p{
     width: 100%;
     height: 70%;
     font-size: 25px;
@@ -402,14 +398,14 @@
     height: 100%;
     display: flex;
   }
-  #region6 .region-inner .region-innerLeft{
+  #region6 .region-innerLeft{
     width: 50%;
     height: 100%;
     background: url("/src/assets/region6_bg.jpg") no-repeat center / 100% 100%;
     position: relative;
     display: flex;
   }
-  #region6 .region-inner .region-innerLeft .text{
+  #region6 .region-innerLeft .text{
     width: 20%;
     height: 120%;
     background: url("/src/assets/copy.png") no-repeat center / 100% 100%;;
@@ -417,13 +413,13 @@
     top: -10%;
     left: 2%;
   }
-  #region6 .region-inner .region-innerRight{
+  #region6 .region-innerRight{
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
-  #region6 .region-inner .region-innerRight .vol{
+  #region6 .region-innerRight .vol{
     width: 100%;
     height: 10%;
     display: flex;
@@ -431,62 +427,62 @@
     position: relative;
     padding: 0 50px;
   }
-  #region6 .region-inner .region-innerRight .vol img{
+  #region6 .vol img{
     height: 100%;
   }
-  #region6 .region-inner .region-innerRight .vol #arrow{
+  #region6 .vol #arrow{
     height: 30%;
     position: relative;
     bottom: 7px;
     margin-right: 5px;
   }
-  #region6 .region-inner .region-innerRight .vol .text{
+  #region6 .vol .text{
     font-size: 18px;
     position: absolute;
     right: 50px;
     font-weight: 900;
   }
-  #region6 .region-inner .region-innerRight .title{
+  #region6 .title{
     width: 100%;
     height: 45%;
     padding: 15px 50px 25px;
     border-top: 2px solid black;
     margin-top: 10px;
   }
-  #region6 .region-inner .region-innerRight .title img{
+  #region6 .title img{
     width: 100%;
     height: 100%;
   }
-  #region6 .region-inner .region-innerRight .triangles{
+  #region6 .triangles{
     width: 100%;
     height: 45%;
     display: flex;
     padding: 10px 50px;
   }
-  #region6 .region-inner .region-innerRight .triangles img{
+  #region6 .triangles img{
     width: 29%;
     height: 100%;
     position: relative;
   }
-  #region6 .region-inner .region-innerRight .triangles img:nth-child(even){
+  #region6 .triangles img:nth-child(even){
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
-  #region6 .region-inner .region-innerRight .triangles img:nth-child(odd){
+  #region6 .triangles img:nth-child(odd){
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
   }
-  #region6 .region-inner .region-innerRight .triangles img:nth-child(2){
+  #region6 .triangles img:nth-child(2){
     left: -13%;
   }
-  #region6 .region-inner .region-innerRight .triangles img:nth-child(3){
+  #region6 .triangles img:nth-child(3){
     left: -26%;
   }
-  #region6 .region-inner .region-innerRight .triangles img:nth-child(4){
+  #region6 .triangles img:nth-child(4){
     left: -39%;
   }
-  #region6 .region-inner .region-innerRight .triangles img:nth-child(5){
+  #region6 .triangles img:nth-child(5){
     left: -52%;
   }
-  #region6 .region-inner .region-innerRight .triangles .more{
+  #region6 .triangles .more{
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     width: 30%;
     height: 100%;
@@ -498,7 +494,7 @@
     align-items: center;
     flex-shrink: 0;
   }
-  #region6 .region-inner .region-innerRight .triangles .more .text{
+  #region6 .more .text{
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     width: 95%;
     height: 95%;
@@ -511,9 +507,21 @@
     font-size: 18px;
     padding-top: 50px;
   }
-  #region6 a:hover .region-inner .region-innerRight .triangles .more .text{
+  #region6 a:hover .more .text{
     color: white;
     background-color: black;
   }
 
+  /* For Mobile Device */
+  @media all and (max-width: 414px){
+
+  }
+  /* For Small Device */
+  @media all and (min-width: 414px) and (max-width: 768px){
+
+  }
+  /* For Medium Device */  
+  @media all and (min-width: 768px) and (max-width: 992px){
+    
+  }
 </style>
