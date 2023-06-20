@@ -138,12 +138,12 @@
   }
   .top-info{
     display: flex;
+    align-items: center;
     width: 100%;
     height: 30px;
   }
-  .top-info  h6{
+  .top-info h6{
     font-size: 14px;
-    line-height: 30px;
   }
   .top-info  h6:nth-child(2){
     margin: auto;
@@ -160,12 +160,12 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 30px 20px 20px 25px;
+    padding: 35px 20px 20px 25px;
     border-right: 4px solid black;
   }
   .zelda-logo img{
     height: 80%;
-    width: auto;
+    width: 100%;
   }
   .title-group .title{
     width: 65%;
@@ -184,10 +184,13 @@
     align-items: center;
   }
   .eng-title h4{
-    font-size: 22px;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 1.4vw;
     font-weight: 550;
     letter-spacing: -0.5px;
     display: flex;
+    gap: 5px;
   }
   .eng-title h4::before,
   .eng-title h4::after{
@@ -199,14 +202,17 @@
     flex-grow: 1;
   }
   .eng-title h4::before{
-    width: .4em;
+    /* width: .4em; */
+    width: 0.5%;
     margin-right: 5px;
   }
   .eng-title h4::after{
-    width: 25em;
+    /* width: 25em; */
+    width: 60%;
     margin-left: 5px;
   }
   .title .ch-title{
+    width: 100%;
     height: 55%;
     display: flex;
     justify-content: center;
@@ -315,22 +321,22 @@
     display: flex;
   }
   .about-title h1{
-    font-size: 40px;
+    font-size: 2.7vw;
     position: absolute;
     left: 30px;
   }
   .about-title h1 span{
-    font-size: 70px;
+    font-size: 3.7vw;
   }
   .about-title h4{
-    font-size: 20px;
+    font-size: 1.2vw;
     position: absolute;
     right: 50px;
   }
   .about-text .about-p{
     width: 100%;
     height: 70%;
-    font-size: 25px;
+    font-size: 1.7vw;
     font-weight: 900;
     display: flex;
     flex-direction: column;
@@ -370,12 +376,12 @@
   #region6::before{
     content: 'NEW';
     color:  white;
-    font-size: 32px;
+    font-size: 2vw;
     width: 10%;
     height: 20%;
     position: absolute;
-    top: 32px;
-    right: -39px;
+    top: 2vw;
+    right: -2.5vw;
     z-index: 2;
     transform: rotate(42deg);
   }
@@ -384,8 +390,8 @@
     width: 9.5%;
     height: 24%;
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: -.6vw;
+    right: -.6vw;
     color: white;
     background: linear-gradient(42deg, transparent 50% , rgb(163, 68, 68) 50%);
   }
@@ -437,7 +443,7 @@
     margin-right: 5px;
   }
   #region6 .vol .text{
-    font-size: 18px;
+    font-size: 1.2vw;
     position: absolute;
     right: 50px;
     font-weight: 900;
@@ -471,16 +477,16 @@
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
   }
   #region6 .triangles img:nth-child(2){
-    left: -13%;
+    left: -4.9vw;
   }
   #region6 .triangles img:nth-child(3){
-    left: -26%;
+    left: -9.8vw;
   }
   #region6 .triangles img:nth-child(4){
-    left: -39%;
+    left: -14.7vw;
   }
   #region6 .triangles img:nth-child(5){
-    left: -52%;
+    left: -19.6vw;
   }
   #region6 .triangles .more{
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -488,7 +494,7 @@
     height: 100%;
     background-color: black;
     position: relative;
-    left: -65%;
+    left: -24.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -504,7 +510,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.2vw;
     padding-top: 50px;
   }
   #region6 a:hover .more .text{
@@ -512,16 +518,125 @@
     background-color: black;
   }
 
-  /* For Mobile Device */
-  @media all and (max-width: 414px){
-
-  }
   /* For Small Device */
-  @media all and (min-width: 414px) and (max-width: 768px){
-
+  @media all and (max-width: 768px){
+    .container{
+      width: calc(100vw - 40px);
+      margin: 15px 20px;
+    }
+    .top-info h6{
+      font-size: 10px;
+    }
+    .title-group{
+      height: 10vh;
+    }
+    .title-group .zelda-logo{
+      display: none;
+    }
+    .title-group .title{
+      width: 80%;
+      border-left: none;
+    }
+    .title-group .switch-logo{
+      width: 20%;
+      padding: 10px;
+    }
+    .eng-title h4::before{
+      display: none;
+    }
+    .eng-title h4::after{
+      width: 40%;
+    }
+    .ch-title img{
+      height: 15px;
+    }
+    .welcome-block{
+      height: 80vh;
+    }
+    .welcome-block .kv{
+      height: 40%;
+      padding: 5px;
+    }
+    .welcome-block .about{
+      height: 60%;
+    }
+    .about .about-text{
+      padding: 5px;
+    }
+    .about-text .about-title{
+      height: 50px;
+    }
+    .region-group{
+      height: 200vh;
+    }
+    #region6{
+      height: 400px;
+      padding: 10px 20px 30px;
+    }
+    #region6 .region-inner{
+      height: 100%;
+      flex-direction: column;
+    }
+    #region6 .region-innerLeft{
+      width: 100%;
+      height: 50%;
+      background: url("/src/assets/region6_bg.jpg") no-repeat center / 100% 100%;
+      position: relative;
+      display: flex;
+    }
+    #region6 .region-innerRight{
+      width: 100%;
+      height: 50%;
+      padding-top: 10px;
+    }
+    #region6 .region-innerLeft .text{
+      width: 15%;
+      height: 150%;
+    }
+    #region6 .title{
+      width: 100%;
+      height: 60%;
+      padding: 10px 40px 0px;
+    }
+    #region6 .title img{
+      width: 70%;
+      height: 80%;
+    }
+    #region6 .triangles{
+      width: 80%;
+      height: 40%;
+      padding: 0px 20px;
+    }
+    #region6 .triangles .more{
+      width: 30%;
+    }
   }
   /* For Medium Device */  
   @media all and (min-width: 768px) and (max-width: 992px){
-    
+    .container{
+      width: calc(100vw - 100px);
+      margin: 25px 50px;
+    }
+    .title-group{
+      height: 15vh;
+    }
+    .title-group .zelda-logo{
+      padding: 30px 15px 15px 20px;
+    }
+    .ch-title img{
+      height: 40px;
+    }
+    .welcome-block{
+      height: 100vh;
+    }
+    .welcome-block .kv{
+      height: 60%;
+    }
+    .welcome-block .about{
+      height: 40%;
+    }
+    .region-group{
+      height: 220vh;
+    }
   }
 </style>
