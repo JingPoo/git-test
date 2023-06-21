@@ -1,3 +1,5 @@
-module.exports = {
-    publicPath: '/vue-zelda-website/'
-}
+// module.exports = {
+//     publicPath: process.env.NODE_ENV === 'production'
+//       ? '/vue-zelda-website/'
+//       : '/'
+// }

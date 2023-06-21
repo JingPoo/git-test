@@ -1,19 +1,27 @@
 <script setup>
   import { ref } from 'vue';
+  const kv_img1 = new URL('./assets/kv_img1.jpg', import.meta.url).href;
+  const kv_img2 = new URL('./assets/kv_img2.jpg', import.meta.url).href;
+  const kv_img3 = new URL('./assets/kv_img3.jpg', import.meta.url).href;
+  const thumb1 = new URL('./assets/thumb1.jpg', import.meta.url).href;
+  const thumb2 = new URL('./assets/thumb2.jpg', import.meta.url).href;
+  const thumb3 = new URL('./assets/thumb3.jpg', import.meta.url).href;
+  const thumb4 = new URL('./assets/thumb4.jpg', import.meta.url).href;
+  const thumb5 = new URL('./assets/thumb5.jpg', import.meta.url).href;
   const animationDuration = 10
   const total = ref(3)
   const active = ref(0)
   const preactive = ref(0)
   const pictures = ref([
-    {id: 1, url: '/src/assets/kv_img1.jpg'}, 
-    {id: 2, url: '/src/assets/kv_img2.jpg'}, 
-    {id: 3, url: '/src/assets/kv_img3.jpg'}])
+    {id: 1, url: kv_img1}, 
+    {id: 2, url: kv_img2}, 
+    {id: 3, url: kv_img3}])
   const triangleImg = ref([
-    {id:1, url: '/src/assets/thumb1.jpg'},
-    {id:2, url: '/src/assets/thumb2.jpg'},
-    {id:3, url: '/src/assets/thumb3.jpg'},
-    {id:4, url: '/src/assets/thumb4.jpg'},
-    {id:5, url: '/src/assets/thumb5.jpg'},
+    {id:1, url: thumb1},
+    {id:2, url: thumb2},
+    {id:3, url: thumb3},
+    {id:4, url: thumb4},
+    {id:5, url: thumb5},
   ])
   const img = function(url){
     return{
@@ -38,18 +46,18 @@
 
     <div class="title-group">
       <div class="zelda-logo">
-        <img src="/src/assets/zelda-logo.png">
+        <img src="./assets/zelda-logo.png">
       </div>
       <div class="title">
         <div class="eng-title">
           <h4>HYRULE DISCOVERY JOURNEY</h4>
         </div>
         <div class="ch-title">
-          <img src="/src/assets/ch-title.png">
+          <img src="./assets/ch-title.png">
         </div>
       </div>
       <div class="switch-logo">
-        <img src="/src/assets/switch-logo.png">
+        <img src="./assets/switch-logo.png">
       </div>
     </div>
     <div class="welcome-block">
@@ -58,7 +66,7 @@
           <li v-for="picture in pictures" :key="picture.id" :style="img(picture.url)"  :class="{animate: active === picture.id-1 || preactive === picture.id-1}"></li>
         </ul>
         <div class="text">
-          <img src="/src/assets/kv_copy.png">
+          <img src="./assets/kv_copy.png">
         </div>
       </div>
 
@@ -90,12 +98,12 @@
             </div>
             <div class="region-innerRight">
               <div class="vol">
-                <img id="arrow" src="/src/assets/midashi_arrow.png">
-                <img src="/src/assets/vol.png">
+                <img id="arrow" src="./assets/midashi_arrow.png">
+                <img src="./assets/vol.png">
                 <div class="text">HYRULE DISCOVERY</div>
               </div>
               <div class="title">
-                <img src="/src/assets/title.png">
+                <img src="./assets/title.png">
               </div>
               <div class="triangles">
                 <img v-for="img in triangleImg" :key="img.id" :src="img.url">
@@ -313,7 +321,7 @@
   .about-text .about-title{
     width: 125%;
     height: 30%;
-    background: url("/src/assets/about_title_bg.png") no-repeat center / 100% 100%;
+    background: url("./assets/about_title_bg.png") no-repeat center / 100% 100%;
     display: flex;
     align-items: center;
     color: var(--main-color);
@@ -347,7 +355,7 @@
     width: 50%;
     height: 100%;
     background: linear-gradient(120deg, var(--main-color) 25%, black 26%, transparent 26.5%) center center / 100% 100%,
-                url("/src/assets/about_img2.jpg") no-repeat left bottom / 400% 450%;
+                url("./assets/about_img2.jpg") no-repeat left bottom / 400% 450%;
     animation-name: aboutAnimate;  
     animation-duration: 60s;   
     animation-iteration-count: infinite;
@@ -407,14 +415,14 @@
   #region6 .region-innerLeft{
     width: 50%;
     height: 100%;
-    background: url("/src/assets/region6_bg.jpg") no-repeat center / 100% 100%;
+    background: url("./assets/region6_bg.jpg") no-repeat center / 100% 100%;
     position: relative;
     display: flex;
   }
   #region6 .region-innerLeft .text{
     width: 20%;
     height: 120%;
-    background: url("/src/assets/copy.png") no-repeat center / 100% 100%;;
+    background: url("./assets/copy.png") no-repeat center / 100% 100%;;
     position: absolute;
     top: -10%;
     left: 2%;
@@ -580,7 +588,7 @@
     #region6 .region-innerLeft{
       width: 100%;
       height: 50%;
-      background: url("/src/assets/region6_bg.jpg") no-repeat center / 100% 100%;
+      background: url("./assets/region6_bg.jpg") no-repeat center / 100% 100%;
       position: relative;
       display: flex;
     }
